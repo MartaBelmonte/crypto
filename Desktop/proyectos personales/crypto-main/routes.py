@@ -1,7 +1,7 @@
 from flask import Blueprint, request, jsonify, redirect, url_for
 import requests
-from database import db_connection
-from models import Crypto
+from CryptoFlask.database import db_connection
+from CryptoFlask.models import Crypto
 
 crypto_bp = Blueprint('crypto', __name__)
 
