@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crypto Tracker</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <h1 class="text-center mt-5 mb-5">Crypto Tracker</h1>
+        <div class="row mb-5">
+            <div class="col-md-8 offset-md-2">
+                <canvas id="cryptoChart"></canvas>
+                <button id="refreshButton" class="btn btn-primary mt-3">Actualizar Datos</button>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-8 offset-md-2">
+                <form id="cryptoForm">
+                    <div class="mb-3">
+                        <label for="name" class="form-label">Nombre de la Criptomoneda</label>
+                        <input type="text" class="form-control" id="name" name="name" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="symbol" class="form-label">Símbolo</label>
+                        <select class="form-select" id="symbol" name="symbol" required>
+                            <option value="" disabled selected>Seleccione un símbolo</option>
+                        </select>
+                    </div>
+                    <div class="mb-3">
+                        <label for="price" class="form-label">Precio</label>
+                        <input type="number" step="0.01" class="form-control" id="price" name="price" required>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Agregar Criptomoneda</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Incluye tus archivos JavaScript al final del cuerpo para asegurar que se carguen después del HTML -->
+    <script src="{{ url_for('static', filename='js/chart.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/form.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/symbols.js') }}"></script>
+</body>
+
+</html>
