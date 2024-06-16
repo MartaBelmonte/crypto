@@ -25,3 +25,5 @@ El proyecto Crypto es una plataforma diseñada para proporcionar información ac
 ## Objetivos del Proyecto
 
 El principal objetivo de este proyecto es familiarizarme con el desarrollo web utilizando Flask y la integración con MongoDB. 
+
+
