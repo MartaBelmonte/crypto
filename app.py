@@ -12,6 +12,23 @@ app.register_blueprint(crypto_bp)
 def home():
     return render_template('index.html')
 
+@app.route('/inicio.html')
+def inicio():
+    return render_template('inicio.html')
+
+@app.route('/caracteristicas.html')
+def caracteristicas():
+    return render_template('caracteristicas.html')
+
+@app.route('/precios.html')
+def precios():
+    return render_template('precios.html')
+
+
+@app.route('/contacto.html')
+def contacto():
+    return render_template('contacto.html')
+
 
 @app.errorhandler(404)
 def not_found(error=None):

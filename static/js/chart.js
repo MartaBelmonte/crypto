@@ -1,25 +1,21 @@
 document.addEventListener('DOMContentLoaded', function() {
     let cryptoChart = null;
-    const ctx = document.getElementById('cryptoChart').getContext('2d');
 
     function fetchAndRenderChart() {
         fetch('/cryptos')
-            .then(response => {
-                if (!response.ok) {
-                    throw new Error('Error fetching cryptos. Status: ' + response.status);
-                }
-                return response.json();
-            })
+            .then(response => response.json())
             .then(data => {
                 const labels = data.map(crypto => crypto.name);
                 const prices = data.map(crypto => parseFloat(crypto.price));
 
-                // Verificar si cryptoChart ya está inicializado como una instancia de Chart.js
+                const ctx = document.getElementById('cryptoChart').getContext('2d');
+
+                // Destruir el gráfico existente si ya existe
                 if (cryptoChart) {
                     cryptoChart.destroy();
                 }
 
-                // Crear una nueva instancia de Chart.js
+                // Crear un nuevo gráfico
                 cryptoChart = new Chart(ctx, {
                     type: 'line',
                     data: {
@@ -45,9 +41,7 @@ document.addEventListener('DOMContentLoaded', function() {
             .catch(error => console.error('Error fetching cryptos:', error));
     }
 
-    // Llamar a fetchAndRenderChart al cargar la página
-    fetchAndRenderChart();
-
-    // Agregar event listener al botón de actualizar
     document.getElementById('refreshButton').addEventListener('click', fetchAndRenderChart);
+
+    fetchAndRenderChart();
 });

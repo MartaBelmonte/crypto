@@ -8,7 +8,8 @@ ca = certifi.where()
 def db_connection():
     try:
         client = MongoClient(MONGO_URI, tlsCAFile=ca)
-        db = client["crypto2"]
+        db = client["db_cryptos"]
+        print("Conexión a MongoDB exitosa.")
         return db
     except Exception as e:
         print(f"Error de conexión a MongoDB Atlas: {e}")
