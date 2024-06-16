@@ -1,18 +1,118 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Características - Crypto Tracker</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='../../../static/js/css/styles.css') }}">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
 
-<body>
+<body class="bg-light">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Crypto Tracker</a>
+            <button class="navbar-toggler" type="button" aria-controls="navbarNav" aria-expanded="false"
+                aria-label="Toggle navigation" onclick="toggleMenu()">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="inicio.html" target="content">Inicio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="caracteristicas.html" target="content">Características</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="precios.html" target="content">Precios</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contacto.html" target="content">Contacto</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Contenido principal usando Bootstrap -->
     <div class="container mt-5">
-        <h1 class="text-center">Página de Características</h1>
-        <p>Aquí puedes ver las características principales de Crypto Tracker.</p>
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+                <div class="text-center mb-4">
+                    <h1 class="mb-3">Características de Crypto Tracker</h1>
+                    <p class="lead">Descubre las funciones avanzadas que ofrece Crypto Tracker para mantenerte al día
+                        con el
+                        mercado de criptomonedas.</p>
+                </div>
+                <div class="card feature-card mb-4">
+                    <div class="card-body">
+                        <h3 class="card-title text-primary">Seguimiento en Tiempo Real</h3>
+                        <p class="card-text">Visualiza el precio actualizado en tiempo real y las fluctuaciones de las
+                            criptomonedas más populares como Bitcoin, Ethereum, y más.</p>
+                    </div>
+                </div>
+                <div class="card feature-card mb-4">
+                    <div class="card-body">
+                        <h3 class="card-title text-primary">Interfaz Intuitiva y Moderna</h3>
+                        <p class="card-text">Diseño fácil de usar que permite a los usuarios navegar y obtener
+                            información
+                            rápidamente. La interfaz está diseñada para proporcionar una experiencia fluida y amigable.
+                        </p>
+                    </div>
+                </div>
+                <div class="card feature-card mb-4">
+                    <div class="card-body">
+                        <h3 class="card-title text-primary">Compatibilidad Multiplataforma</h3>
+                        <p class="card-text">Accede desde cualquier dispositivo: computadora de escritorio, tablet o
+                            teléfono móvil. Crypto Tracker se adapta perfectamente a diferentes pantallas y sistemas
+                            operativos.</p>
+                    </div>
+                </div>
+                <div class="card feature-card mb-4">
+                    <div class="card-body">
+                        <h3 class="card-title text-primary">Personalización Avanzada de Preferencias</h3>
+                        <p class="card-text">Ajusta las configuraciones según tus necesidades y preferencias
+                            individuales.
+                            Personaliza alertas, favoritos y más para una experiencia de usuario totalmente adaptada.
+                        </p>
+                    </div>
+                </div>
+                <div class="card feature-card mb-4">
+                    <div class="card-body">
+                        <h3 class="card-title text-primary">Noticias y Actualizaciones</h3>
+                        <p class="card-text">Mantente informado con las últimas noticias y actualizaciones del mercado
+                            de
+                            criptomonedas directamente en tu dashboard personalizado.</p>
+                    </div>
+                </div>
+                <div class="card feature-card mb-4">
+                    <div class="card-body">
+                        <h3 class="card-title text-primary">Seguridad y Protección</h3>
+                        <p class="card-text">Garantizamos la seguridad de tus datos personales y financieros mediante
+                            encriptación avanzada y prácticas de seguridad de última generación.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
+
+    <!-- Bootstrap y scripts al final del cuerpo -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        function toggleMenu() {
+            var navbarNav = document.getElementById('navbarNav');
+            if (navbarNav.classList.contains('collapse')) {
+                navbarNav.classList.remove('collapse');
+            } else {
+                navbarNav.classList.add('collapse');
+            }
+        }
+    </script>
+
+    </style>
 </body>
 
 </html>
