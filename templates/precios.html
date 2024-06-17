@@ -1,181 +1,213 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Precios Crypto Tracker</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='../../../static/js/css/styles.css') }}">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
-</head>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='../../../static/js/css/styles.css') }}"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor"
+      crossorigin="anonymous"
+    />
+  </head>
 
-<body class="bg-light">
+  <body class="bg-light">
     <!-- Barra de navegación usando Bootstrap -->
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="#">Crypto Tracker</a>
-            <button class="navbar-toggler" type="button" aria-controls="navbarNav" aria-expanded="false"
-                aria-label="Toggle navigation" onclick="toggleMenu()">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item">
-                        <a class="nav-link" href="inicio.html" target="content">Inicio</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="caracteristicas.html" target="content">Características</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="precios.html" target="content">Precios</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="contacto.html" target="content">Contacto</a>
-                    </li>
-                </ul>
-            </div>
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">Crypto Tracker</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+          onclick="toggleMenu()"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div
+          class="collapse navbar-collapse justify-content-center"
+          id="navbarNav"
+        >
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="inicio.html" target="content">Inicio</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="caracteristicas.html" target="content"
+                >Características</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="precios.html" target="content"
+                >Precios</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="contacto.html" target="content"
+                >Contacto</a
+              >
+            </li>
+          </ul>
         </div>
+      </div>
     </nav>
 
-    <!-- Contenido principal usando Bootstrap -->
+    <!-- Contenido principal  -->
     <div class="container mt-5">
-        <div class="row">
-            <div class="col-md-8">
-                <h1 class="display-4">Precios de Criptomonedas</h1>
-                <p class="lead">Consulta los precios actuales de las principales criptomonedas.</p>
-                <hr class="my-4">
-                <!-- Contenedor para las tarjetas de criptomonedas -->
-                <div id="cryptoContainer"></div>
+      <div class="row">
+        <div class="col-md-8">
+          <h1 class="display-4">Precios de Criptomonedas</h1>
+          <p class="lead">
+            Consulta los precios actuales de las principales criptomonedas.
+          </p>
+          <hr class="my-4" />
+          <!-- Contenedor para las tarjetas de criptomonedas -->
+          <div id="cryptoContainer"></div>
 
-                <!-- Paginación -->
-                <nav>
-                    <ul class="pagination justify-content-center" id="pagination"></ul>
-                </nav>
-            </div>
-            <div class="col-md-4">
-                <!-- Sidebar, si es necesario -->
-                <div class="card mb-3">
-                    <div class="card-header bg-info text-white">
-                        Información adicional
-                    </div>
-                    <div class="card-body">
-                        <p class="card-text">Aquí puedes encontrar información adicional, gráficos, noticias
-                            relacionadas y más recursos sobre criptomonedas.</p>
-                        <a href="#" class="btn btn-info">Más recursos</a>
-                    </div>
-                </div>
-            </div>
+          <!-- Paginación -->
+          <nav>
+            <ul class="pagination justify-content-center" id="pagination"></ul>
+          </nav>
         </div>
+        <div class="col-md-4">
+          <div class="card mb-3">
+            <div class="card-header bg-info text-white">
+              Información adicional
+            </div>
+            <div class="card-body">
+              <p class="card-text">
+                Aquí puedes encontrar información adicional, gráficos, noticias
+                relacionadas y más recursos sobre criptomonedas.
+              </p>
+              <a href="#" class="btn btn-info">Más recursos</a>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
 
-    <!-- Scripts de Bootstrap y cualquier otro script adicional -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-Xwfw6BOe8G+2QCmGjEwte2UaTHhy2CzZu0M0Dlj3g4v9t2vZ9D5kYhUfx0jsIh4B" crossorigin="anonymous">
-        </script>
+   
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-Xwfw6BOe8G+2QCmGjEwte2UaTHhy2CzZu0M0Dlj3g4v9t2vZ9D5kYhUfx0jsIh4B"
+      crossorigin="anonymous"
+    ></script>
     <script>
-        function toggleMenu() {
-            var navbarNav = document.getElementById('navbarNav');
-            if (navbarNav.classList.contains('collapse')) {
-                navbarNav.classList.remove('collapse');
-            } else {
-                navbarNav.classList.add('collapse');
-            }
+      function toggleMenu() {
+        var navbarNav = document.getElementById("navbarNav");
+        if (navbarNav.classList.contains("collapse")) {
+          navbarNav.classList.remove("collapse");
+        } else {
+          navbarNav.classList.add("collapse");
+        }
+      }
+
+      document.addEventListener("DOMContentLoaded", function () {
+        const cryptoContainer = document.getElementById("cryptoContainer");
+        const pagination = document.getElementById("pagination");
+        const itemsPerPage = 7; // Mostrar 7 criptomonedas por página
+        let currentPage = 1;
+        let totalPages = 0;
+        let cryptos = [];
+
+        // Función para cargar las criptomonedas desde la API
+        function loadCryptos(page) {
+          fetch(
+            `https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=${itemsPerPage}&page=${page}&sparkline=false`
+          )
+            .then((response) => response.json())
+            .then((data) => {
+              cryptos = data;
+              totalPages = Math.ceil(cryptos.length / itemsPerPage);
+              renderCryptoCards(getCryptoDataForPage(currentPage));
+              renderPagination();
+            })
+            .catch((error) =>
+              console.error("Error fetching crypto data:", error)
+            );
         }
 
-        document.addEventListener('DOMContentLoaded', function () {
-            const cryptoContainer = document.getElementById('cryptoContainer');
-            const pagination = document.getElementById('pagination');
-            const itemsPerPage = 7; // Mostrar 7 criptomonedas por página
-            let currentPage = 1;
-            let totalPages = 0;
-            let cryptos = [];
+        // Función para obtener las criptomonedas de la página actual
+        function getCryptoDataForPage(page) {
+          const startIndex = (page - 1) * itemsPerPage;
+          const endIndex = startIndex + itemsPerPage;
+          return cryptos.slice(startIndex, endIndex);
+        }
 
-            // Función para cargar las criptomonedas desde la API
-            function loadCryptos(page) {
-                fetch(`https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=${itemsPerPage}&page=${page}&sparkline=false`)
-                    .then(response => response.json())
-                    .then(data => {
-                        cryptos = data;
-                        totalPages = Math.ceil(cryptos.length / itemsPerPage);
-                        renderCryptoCards(getCryptoDataForPage(currentPage));
-                        renderPagination();
-                    })
-                    .catch(error => console.error('Error fetching crypto data:', error));
-            }
-
-            // Función para obtener las criptomonedas de la página actual
-            function getCryptoDataForPage(page) {
-                const startIndex = (page - 1) * itemsPerPage;
-                const endIndex = startIndex + itemsPerPage;
-                return cryptos.slice(startIndex, endIndex);
-            }
-
-            // Función para renderizar las tarjetas de criptomonedas
-            function renderCryptoCards(cryptoData) {
-                cryptoContainer.innerHTML = '';
-                cryptoData.forEach(crypto => {
-                    const cardHtml = `
+        // Función para renderizar las tarjetas de criptomonedas
+        function renderCryptoCards(cryptoData) {
+          cryptoContainer.innerHTML = "";
+          cryptoData.forEach((crypto) => {
+            const cardHtml = `
                         <div class="card mb-3">
                             <div class="card-header bg-primary text-white">
                                 ${crypto.name} (${crypto.symbol.toUpperCase()})
                             </div>
                             <div class="card-body">
-                                <h5 class="card-title">Precio actual: $${crypto.current_price.toFixed(2)}</h5>
-                                <p class="card-text">${crypto.name} es una criptomoneda popular y su precio está en constante cambio.</p>
+                                <h5 class="card-title">Precio actual: $${crypto.current_price.toFixed(
+                                  2
+                                )}</h5>
+                                <p class="card-text">${
+                                  crypto.name
+                                } es una criptomoneda popular y su precio está en constante cambio.</p>
                                 <a href="#" class="btn btn-primary">Ver más información</a>
                             </div>
                         </div>
                     `;
-                    cryptoContainer.innerHTML += cardHtml;
-                });
+            cryptoContainer.innerHTML += cardHtml;
+          });
+        }
+
+        // Función para renderizar la paginación
+        function renderPagination() {
+          pagination.innerHTML = "";
+
+          for (let i = 1; i <= totalPages; i++) {
+            const li = document.createElement("li");
+            li.classList.add("page-item");
+            const link = document.createElement("a");
+            link.classList.add("page-link");
+            link.href = "#";
+            link.textContent = i;
+            li.appendChild(link);
+
+            if (i === currentPage) {
+              li.classList.add("active");
             }
 
-            // Función para renderizar la paginación
-            function renderPagination() {
-                pagination.innerHTML = '';
+            li.addEventListener("click", function () {
+              currentPage = i;
+              loadCryptos(currentPage); 
+              updatePagination();
+            });
 
-                for (let i = 1; i <= totalPages; i++) {
-                    const li = document.createElement('li');
-                    li.classList.add('page-item');
-                    const link = document.createElement('a');
-                    link.classList.add('page-link');
-                    link.href = '#';
-                    link.textContent = i;
-                    li.appendChild(link);
+            pagination.appendChild(li);
+          }
+        }
 
-                    if (i === currentPage) {
-                        li.classList.add('active');
-                    }
-
-                    li.addEventListener('click', function () {
-                        currentPage = i;
-                        loadCryptos(currentPage); // Cargar datos para la página seleccionada
-                        updatePagination();
-                    });
-
-                    pagination.appendChild(li);
-                }
+        // Función para actualizar el estado de la paginación
+        function updatePagination() {
+          const pages = pagination.querySelectorAll(".page-item");
+          pages.forEach((page) => {
+            page.classList.remove("active");
+            const link = page.querySelector(".page-link");
+            if (parseInt(link.textContent) === currentPage) {
+              page.classList.add("active");
             }
+          });
+        }
 
-            // Función para actualizar el estado de la paginación
-            function updatePagination() {
-                const pages = pagination.querySelectorAll('.page-item');
-                pages.forEach(page => {
-                    page.classList.remove('active');
-                    const link = page.querySelector('.page-link');
-                    if (parseInt(link.textContent) === currentPage) {
-                        page.classList.add('active');
-                    }
-                });
-            }
-
-            // Cargar las criptomonedas inicialmente
-            loadCryptos(currentPage);
-        });
+        // Cargar las criptomonedas inicialmente
+        loadCryptos(currentPage);
+      });
     </script>
-
-</body>
-
+  </body>
 </html>
